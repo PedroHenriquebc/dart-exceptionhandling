@@ -1,5 +1,17 @@
-import 'package:dart_exceptionhandling/dart_exceptionhandling.dart' as dart_exceptionhandling;
+import 'dart:convert';
+import 'dart:io';
 
 void main(List<String> arguments) {
-  print('Hello world: ${dart_exceptionhandling.calculate()}!');
+  print("Digite um número: ");
+  var line = stdin.readLineSync(encoding: utf8);
+
+  try {
+    double numero = double.parse(line ?? "");
+    print(numero);
+  } catch (e) {
+    print("Número inválido: $line");
+  } finally {
+    print("Executando finally");
+  }
+
 }
