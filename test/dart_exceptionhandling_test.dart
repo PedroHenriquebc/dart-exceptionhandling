@@ -1,4 +1,4 @@
-import 'package:dart_exceptionhandling/dart_exceptionhandling.dart';
+import 'package:dart_exceptionhandling/trycatch.dart';
 import 'package:test/test.dart';
 
 void main() {
