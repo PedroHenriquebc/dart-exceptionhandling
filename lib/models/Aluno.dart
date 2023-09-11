@@ -22,8 +22,22 @@ class Aluno {
     _notas.add(nota);
   }
 
+  double retornaMedia() {
+    var totalNotas = 0.0;
+    for (var nota in _notas) {
+      totalNotas = totalNotas + nota;
+    }
+    var media = totalNotas / _notas.length;
+    return media.isNaN ? 0.0 : media;
+  }
+
+  bool aprovado(double notaDeCorte) {
+    var media = retornaMedia();
+    return media >= notaDeCorte;
+  }
+
   @override
   String toString() {
-    return {"nome": _nome, "Notas": _notas}.toString();
+    return {"nome": _nome, "Notas": _notas, "Média":retornaMedia().toStringAsFixed(2), }.toString();
   }
 }
