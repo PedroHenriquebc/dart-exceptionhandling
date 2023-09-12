@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 void main(List<String> args) {
   print("Digite um número: ");
   var line = stdin.readLineSync(encoding: utf8);
