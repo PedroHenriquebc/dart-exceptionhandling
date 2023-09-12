@@ -1,10 +1,12 @@
 class Aluno {
   String _nome = "";
-  List<double> _notas = [];
+  final List<double> _notas = [];
 
-  Aluno(String nome) {
-    _nome = nome;
-  }
+  Aluno(this._nome); // isto é uma forma simplificada de bindar um construtor
+
+  // Aluno(String nome) {
+  //   _nome = nome;
+  // }
 
   String getNome() {
     return _nome;
@@ -23,10 +25,11 @@ class Aluno {
   }
 
   double retornaMedia() {
-    var totalNotas = 0.0;
-    for (var nota in _notas) {
-      totalNotas = totalNotas + nota;
-    }
+    //itera uma lista incremetando cada element da lista no value
+    var totalNotas = _notas.reduce((value, element) => value + element);
+    // for (var nota in _notas) {
+    //   totalNotas = totalNotas + nota;
+    // }
     var media = totalNotas / _notas.length;
     return media.isNaN ? 0.0 : media;
   }
